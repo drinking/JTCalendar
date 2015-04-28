@@ -111,19 +111,18 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     CGFloat sizeDot = sizeCircle;
     
     sizeCircle = sizeCircle * self.calendarManager.calendarAppearance.dayCircleRatio;
-    sizeDot = sizeDot * self.calendarManager.calendarAppearance.dayDotRatio;
+    sizeDot = self.calendarManager.calendarAppearance.dayDotRadius;
     
     sizeCircle = roundf(sizeCircle);
-    sizeDot = roundf(sizeDot);
     
     circleView.frame = CGRectMake(0, 0, sizeCircle, sizeCircle);
     circleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
     circleView.layer.cornerRadius = sizeCircle / 2.;
     
-    dotView.frame = CGRectMake(0, 0, sizeDot, sizeDot);
+    dotView.frame = CGRectMake(0, 0, sizeDot*2, sizeDot*2);
     CGFloat offset = self.calendarManager.calendarAppearance.dayDotPositionYOffset;
-    dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) +sizeDot * 2.5 + offset);
-    dotView.layer.cornerRadius = sizeDot / 2.;
+    dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) + offset);
+    dotView.layer.cornerRadius = sizeDot ;
 }
 
 - (void)setDate:(NSDate *)date
