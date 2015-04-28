@@ -29,6 +29,9 @@
         self.calendar.calendarAppearance.ratioContentMenu = 2.;
         self.calendar.calendarAppearance.focusSelectedDayChangeMode = YES;
         
+        self.calendar.calendarAppearance.dayDotPositionYOffset = -5;
+        self.calendar.calendarAppearance.dayDotRatio = 0.17;
+        
         // Customize the text for each month
         self.calendar.calendarAppearance.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
             NSCalendar *calendar = jt_calendar.calendarAppearance.calendar;

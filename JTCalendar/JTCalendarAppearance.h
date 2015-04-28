@@ -133,6 +133,13 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
  */
 @property (nonatomic) UIColor *dayDotColorToday;
 
+
+/**
+ *	The default value of this property is 0.
+ */
+@property (nonatomic) CGFloat dayDotPositionYOffset;
+
+
 /**
  *	The default value of this property is @c whiteColor.
  */
@@ -225,5 +232,6 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
  *	@param textColor The color to use.
  */
 - (void)setDayTextColorForAll:(UIColor *)textColor;
+
 
 @end
